@@ -1,0 +1,12 @@
+data;
+# Dynamic Data - here you can specify your needs!
+param Need_Material :=
+	"Tritanium" 9547801	
+	"Pyerite" 2387401	
+	"Mexallon" 598000	
+	"Isogen" 149320	
+	"Nocxium" 37280	
+	"Zydrine" 17781	
+	"Megacyte" 5660	
+	;
+end;

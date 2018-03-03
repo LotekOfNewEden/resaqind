@@ -1,0 +1,89 @@
+data;
+# RESAQIND STATIC DATA - DO NOT CHANGE UNLESS CCP CHANGES THESE VALUES
+param Batch_Mineral_Yield :=
+	[*, *]:			"Tritanium"	"Pyerite"	"Mexallon"	"Isogen"	"Nocxium"	"Zydrine"	"Megacyte"	"Morphite" :=
+	# Standard Ores
+	"Arkonor"		22000		.			2500		.			.			.			320			.
+	"Bistot"		.			12000		.			.			.			450			100			.
+	"Crokite"		21000		.			.			.			760			135			.			.
+	"Dark Ochre"	10000		.			.			1600		120			.			.			.
+	"Gneiss"		.			2200		2400		300			.			.			.			.
+	"Hedbergite"	.			1000		.			200			100			19			.			.
+	"Hemorphite"	2200		.			.			100			120			15			.			.
+	"Jaspet"		.			.			350			.			75			8			.			.
+	"Kernite"		134			.			267			134			.			.			.			.
+	"Mercoxit"		.			.			.			.			.			.			.			300
+	"Omber"			800			100			.			85			.			.			.			.
+	"Plagioclase"	107			213			107			.			.			.			.			.
+	"Pyroxeres"		351			25			50			.			5			.			.			.
+	"Scordite"		346			173			.			.			.			.			.			.
+	"Spodumain"		56000		12050		2100		450			.			.			.			.
+	"Veldspar"		415			.			.			.			.			.			.			.
+	
+	# Moon Ores - Ubiquitous
+	"Bitumens"		6000		6000		400			.			.			.			.			.
+	"Coesite"		10000		2000		400			.			.			.			.			.
+	"Sylvite"		8000		4000		400			.			.			.			.			.
+	"Zeolites"		4000		8000		400			.			.			.			.			.
+	
+	# Moon Ores - Common
+	"Cobaltite"		7500		10000		500			.			.			.			.			.
+	"Euxenite"		10000		7500		500			.			.			.			.			.
+	"Scheelite"		12500		5000		500			.			.			.			.			.
+	"Titanite"		15000		2500		500			.			.			.			.			.
+	
+	# Moon Ores - Uncommon
+	"Chromite"		.			5000		1250		750			50			.			.			.
+	"Otavite"		5000		.			1500		500			50			.			.			.
+	"Sperrylite"	5000		.			1000		1000		.			50			.			.
+	"Vanadinite"	.			5000		750			1250		.			50			.			.
+	
+	# Moon Ores - Rare
+	"Carnotite"		.			.			1000		1250		.			50			.			.
+	"Cinnabar"		.			.			1500		750			.			.			50			.
+	"Pollucite"		.			.			1250		1000		.			50			.			.
+	"Zircon"		.			.			1750		500			.			.			50			.
+	
+	#Moon Ores - Exceptional
+	"Loparite"		.			.			.			.			100			200			50			.
+	"Monazite"		.			.			.			.			50			150			150			.
+	"Xenotime"		.			.			.			.			200			100			50			.
+	"Ytterbite"		.			.			.			.			50			100			200			.
+	;
+	
+param Ore_Volume := 
+	"Arkonor", 1600, "Bistot", 1600, "Crokite", 1600, "Dark Ochre", 800,
+	"Gneiss", 500, "Hedbergite", 300, "Hemorphite", 300, "Jaspet", 200,
+	"Kernite", 120, "Mercoxit", 120, "Omber", 60, "Plagioclase", 35,
+	"Pyroxeres", 30, "Scordite", 15, "Spodumain", 1600, "Veldspar", 10
+	
+	, "Blue Ice", 100000, "Clear Icicle", 100000, "Dark Glitter", 100000, "Gelidus", 100000, 
+	"Glacial Mass", 100000, "Glare Crust", 100000, "Krystallos", 100000, "White Glaze", 100000
+	
+	, "Bitumens", 1000, "Coesite", 1000, "Sylvite", 1000, "Zeolites", 1000,
+	"Cobaltite", 1000, "Euxenite", 1000, "Scheelite", 1000, "Titanite", 1000,
+	"Chromite", 1000, "Otavite", 1000, "Sperrylite", 1000, "Vanadinite", 1000,
+	"Carnotite", 1000, "Cinnabar", 1000, "Pollucite", 1000, "Zircon", 1000,
+	"Loparite", 1000, "Monazite", 1000, "Xenotime", 1000, "Ytterbite", 1000
+	;
+	
+param Ore_Compressed_Volume :=
+	"Arkonor", 8.8, "Bistot", 4.4, "Crokite", 7.81, "Dark Ochre", 4.5,
+	"Gneiss", 1.5, "Hedbergite", .47, "Hemorphite", .86, "Jaspet", .15,
+	"Kernite", .15, "Mercoxit", .1, "Omber", .3, "Plagioclase", .15,
+	"Pyroxeres", .16, "Scordite", .19, "Spodumain", 28, "Veldspar", .15
+	
+	, "Blue Ice", 100, "Clear Icicle", 1000, "Dark Glitter", 1000, "Gelidus", 1000, 
+	"Glacial Mass", 1000, "Glare Crust", 1000, "Krystallos", 1000, "White Glaze", 1000
+	;
+	
+set Ores_Richest_Mineral :=
+	("Tritanium", "Veldspar")
+	("Pyerite", "Scordite")
+	("Mexallon", "Gneiss")
+	("Isogen", "Dark Ochre")
+	("Nocxium", "Crokite")
+	("Zydrine", "Bistot")
+	("Megacyte", "Arkonor")
+	;
+end;

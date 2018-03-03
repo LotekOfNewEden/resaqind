@@ -51,6 +51,46 @@ param Batch_Mineral_Yield :=
 	"Ytterbite"		.			.			.			.			50			100			200			.
 	;
 	
+param Batch_Ice_Product_Yield :=
+	[*, *]:			"Heavy Water"	"Liquid Ozone"	"Strontium"		"Oxygen Isotopes"	"Helium Isotopes"	"Hydrogen Isotopes"		"Nitrogen Isotopes" :=
+	"Glare Crust"	1381			691				35				.					.					.						.
+	"Dark Glitter"	691				1381			69				.					.					.						.
+	"Gelidus"		345				691				104				.					.					.						.
+	"Krystallos"	173				691				173				.					.					.						.
+	"Blue Ice"		69				35				1				414					.					.						.
+	"Clear Icicle"	69				35				1				.				414						.						.
+	"Glacial Mass"	69				35				1				.					.					414						.
+	"White Glaze"	69				35				1				.					.					.						414
+	;
+	
+param Batch_Moongoo_Yield :=
+	[*, *]:			"Atmospheric Gases"	"Evaporite Deposits"	"Hydrocarbons"	"Silicates"			"Cobalt" 	"Scandium"		"Tungsten"		"Titanium"			"Cadmium"	"Chromium"		"Platinum"		"Vanadium"			"Caesium"	"Hafnium"	"Mercury"	"Tecnetium"			"Dysprosium"	"Neodymium"		"Promethium"	"Thulium" :=
+	"Bitumens"		.					.						65				.					.			.				.				.					.			.				.				.					.			.			.			.					.				.				.				.
+	"Coesite"		.					.						.				65					.			.				.				.					.			.				.				.					.			.			.			.					.				.				.				.
+	"Sylvite"		.					65						.				.					.			.				.				.					.			.				.				.					.			.			.			.					.				.				.				.
+	"Zeolites"		65					.						.				.					.			.				.				.					.			.				.				.					.			.			.			.					.				.				.				.
+	
+	"Cobaltite"		.					.						.				.					40			.				.				.					.			.				.				.					.			.			.			.					.				.				.				.
+	"Euxenite"		.					.						.				.					.			40				.				.					.			.				.				.					.			.			.			.					.				.				.				.
+	"Scheelite"		.					.						.				.					.			.				40				.					.			.				.				.					.			.			.			.					.				.				.				.
+	"Titanite"		.					.						.				.					.			.				.				40					.			.				.				.					.			.			.			.					.				.				.				.
+	
+	"Chromite"		.					.						10				.					.			.				.				.					.			40				.				.					.			.			.			.					.				.				.				.
+	"Otacite"		10					.						.				.					.			.				.				.					40			.				.				.					.			.			.			.					.				.				.				.
+	"Sperrylite"	.					10						.				.					.			.				.				.					.			.				40				.					.			.			.			.					.				.				.				.
+	"Vanadinite"	.					.						.				10					.			.				.				.					.			.				.				40					.			.			.			.					.				.				.				.
+	
+	"Carnotite"		15					.						.				.					10			.				.				.					.			.				.				.					.			.			.			50					.				.				.				.
+	"Cinnabar"		.					15						.				.					.			.				10				.					.			.				.				.					.			50			.			.					.				.				.				.
+	"Pollucite"		.					.						15				.					.			10				.				.					.			.				.				.					50			.			.			.					.				.				.				.
+	"Zircon"		.					.						.				15					.			.				.				10					.			.				.				.					.			.			50			.					.				.				.				.
+	
+	"Loparite"		.					.						20				.					.			20				.				.					.			.				10				.					.			.			.			.					.				.				22				.
+	"Monazite"		.					20						.				.					.			.				20				.					.			10				.				.					.			.			.			.					.				22				.				.
+	"Xenotime"		20					.						.				.					20			.				.				.					.			.				.				10					.			.			.			.					22				.				.				.
+	"Yttervite"		.					.						.				20					.			.				.				20					10			.				.				.					.			.			.			.					.				.				.				22
+	;
+
 param Ore_Volume := 
 	"Arkonor", 1600, "Bistot", 1600, "Crokite", 1600, "Dark Ochre", 800,
 	"Gneiss", 500, "Hedbergite", 300, "Hemorphite", 300, "Jaspet", 200,
@@ -86,4 +126,5 @@ set Ores_Richest_Mineral :=
 	("Zydrine", "Bistot")
 	("Megacyte", "Arkonor")
 	;
+
 end;

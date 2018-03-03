@@ -39,12 +39,18 @@ set Minerals := {
 	"Nocxium", "Zydrine", "Megacyte", "Morphite"
 	};
 	
-set Ice_Products := {
-	"Heavy Water", "Helium Isotopes", "Hydrogen Isotopes", "Liquid Ozone",
-	"Nitrogen Isotopes", "Oxygen Isotopes", "Strontium Clathrates"
-	};
-	
-set Materials := Minerals union Ice_Products;
+set Ice_Isotopes := {"Helium Isotopes", "Hydrogen Isotopes", "Nitrogen Isotopes", "Oxygen Isotopes"};
+set Ice_Products := {"Heavy Water", "Liquid Ozone", "Strontium Clathrates"} union Ice_Isotopes;
+
+
+set Moongoo_Ubiquitous := {"Atmospheric Gases", "Evaporite Deposits", "Hydrocarbons", "Silicates"};
+set Moongoo_Common := {"Cobalt", "Scandium", "Tungsten", "Titanium"};
+set Moongoo_Uncommon := {"Cadmium", "Chromium", "Platinum", "Vanadium"};
+set Moongoo_Rare := {"Caesium", "Hafnium", "Mercury", "Tecnetium"};
+set Moongoo_Exceptional := {"Dysprosium", "Neodymium", "Promethium", "Thulium"};
+set Moongoo := Moongoo_Ubiquitous union Moongoo_Common union Moongoo_Uncommon union Moongoo_Rare union Moongoo_Exceptional;
+
+set Materials := Minerals union Ice_Products union Moongoo;
 
 set Ores_Richest_Mineral, dimen 2;
 
@@ -57,14 +63,25 @@ set Reprocessing_Skills :=
 
 # Parameters ########################################
 
-# Parameters - Optimization
-param Optimization_Moon_Ores_Only_Yield_Moongoo binary, default 1;
-param Optimization_Set_Richest_Mineral_Ores_As_Upper_Bounds binary, default 0;
-
-# Parameters - Static Data
+# Static Data
 param Ore_Volume{o in Ores}, > 0, default 0;
 param Ore_Compressed_Volume{o in Compressable_Ores}, > 0, default 0; # Moon Ores cannot be compressed
 param Batch_Mineral_Yield{o in Mineral_Ores, m in Minerals} integer, default 0, >= 0;
+param Batch_Moongoo_Yield{o in Moon_Ores, m in Moongoo} integer, default 0, >= 0;
+param Batch_Ice_Product_Yield{o in Ice_Ores, i in Ice_Products} integer, default 0, >= 0;
+
+param Material_Volume{m in Materials} > 0, :=
+	if m in Minerals then .01
+	else if m in Moongoo then .05
+	else if m in Ice_Isotopes then .03
+	else if m = "Heavy Water" then .4
+	else if m = "Liquid Ozone" then .4
+	else if m = "Strontium Clathrates" then 3
+;
+
+# Parameters - Optimization
+param Optimization_Moon_Ores_Only_Yield_Moongoo binary, default 1;
+param Optimization_Set_Richest_Mineral_Ores_As_Upper_Bounds binary, default 0;
 
 # Parameters - Dynamic Data
 param Need_Material{m in Materials} integer, default 0, >= 0;
